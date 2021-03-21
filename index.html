@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maor Bar - CV</title>
+    <style>
+        body,
+        html,
+        p {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            position: relative;
+            overflow-y: hidden;
+        }
+        
+        img {
+            height: 100%;
+            position: relative;
+            width: auto;
+        }
+        
+        .cv_img_wrapper {
+            position: absolute;
+            width: auto
+        }
+        
+        .download_pdf {
+            position: absolute;
+            top: 60%;
+            left: 2.7%;
+            width: 5.25%;
+            height: 5.5%;
+            border: 0px solid red;
+            text-indent: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .email_me {
+            position: absolute;
+            top: 65%;
+            left: 92%;
+            width: 4%;
+            height: 17%;
+            border: 0px solid red;
+            text-indent: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="cv_img_wrapper">
+        <img src="cv-img.png" usemap="#map" id="img_ID" />
+        <a href="http://maorbar.com/cv/maorbar_cv.pdf" class="download_pdf">Download my PDF!</a>
+        <a href="mailto:maor@maorbar.com" class="email_me">email me!</a>
+    </p>
+    <!--------------------------->
+    <script type="text/javascript">
+        (function() {
+            function scrollHorizontally(e) {
+                e = window.event || e;
+                var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+                document.documentElement.scrollLeft -= (delta * 40); // Multiplied by 40
+                document.body.scrollLeft -= (delta * 40); // Multiplied by 40
+                e.preventDefault();
+            }
+            if (window.addEventListener) {
+                // IE9, Chrome, Safari, Opera
+                window.addEventListener("mousewheel", scrollHorizontally, false);
+                // Firefox
+                window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+            } else {
+                // IE 6/7/8
+                window.attachEvent("onmousewheel", scrollHorizontally);
+            }
+        })();
+    </script>
+</body>
+
+</html>
